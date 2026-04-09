@@ -1,0 +1,67 @@
+# ----------------------
+# OS files
+# ----------------------
+.DS_Store
+Thumbs.db
+
+# ----------------------
+# Environment variables
+# ----------------------
+.env
+.env.*
+!.env.example
+
+# ----------------------
+# Node.js (Backend + Frontend)
+# ----------------------
+frontend/node_modules/
+node-backend/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Build folders
+dist/
+build/
+
+# ----------------------
+# Python (Flask / ML backend)
+# ----------------------
+# __pycache__/
+# *.pyc
+# *.pyo
+# *.pyd
+# *.pkl
+# *.joblib
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# ----------------------
+# Logs
+# ----------------------
+logs/
+*.log
+
+# ----------------------
+# IDE / Editor
+# ----------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ----------------------
+# Testing
+# ----------------------
+coverage/
+
+# ----------------------
+# Misc
+# ----------------------
+*.zip
+*.tar.gz
+*.rar
