@@ -4,6 +4,8 @@ const cors = require('cors');
 const connectDB = require('./config/database');
 const errorHandler = require('./middleware/errorHandler');
 const userRoutes = require('./routes/userRoutes');
+const authRoutes = require('./routes/authRoutes');
+const protect = require('./middleware/authMiddleware');
 
 const app = express();
 
@@ -16,7 +18,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
-app.use('/api/users', userRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/users', protect, userRoutes);
 
 // Basic route
 app.get('/', (req, res) => {
@@ -24,6 +27,7 @@ app.get('/', (req, res) => {
     message: 'Welcome to Sakhi PCOS Backend API',
     version: '1.0.0',
     endpoints: {
+      auth: '/api/auth',
       users: '/api/users',
     },
   });
